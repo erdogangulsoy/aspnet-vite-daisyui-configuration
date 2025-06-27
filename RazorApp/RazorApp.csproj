@@ -10,4 +10,9 @@
       <Folder Include="wwwroot\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\assets\main-CPanAHD_.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\assets\style-D0iQychu.css" />
+    </ItemGroup>
+
 </Project>

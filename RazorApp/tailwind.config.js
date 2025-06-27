@@ -5,7 +5,8 @@ export default {
   content: [
     "./Pages/**/*.{cshtml,html,js}",
     "./wwwroot/js/**/*.js",
-    "./wwwroot/**/*.html"
+    "./wwwroot/**/*.html",
+    "./Frontend/js/**/*.js"
   ],
   theme: {
     extend: {},
