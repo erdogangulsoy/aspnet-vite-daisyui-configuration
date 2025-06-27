@@ -1,0 +1,17 @@
+@inject Microsoft.AspNetCore.Hosting.IWebHostEnvironment Environment
+@using RazorApp.Helpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>@ViewData["Title"]</title>
+    @Html.ViteAssets(Environment, "Frontend/css/style.css", "Frontend/js/main.js")
+</head>
+<body>
+
+@RenderBody()
+
+@await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
