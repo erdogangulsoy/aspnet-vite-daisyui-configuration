@@ -36,11 +36,11 @@ public static class ViteHelper
                     // Add main file
                     if (entry.File.EndsWith(".css"))
                     {
-                        content.AppendHtml($"<link rel=\"stylesheet\" href=\"/{entry.File}\">");
+                        content.AppendHtml($"<link rel=\"stylesheet\" href=\"/dist/{entry.File}\">");
                     }
                     else if (entry.File.EndsWith(".js"))
                     {
-                        content.AppendHtml($"<script type=\"module\" src=\"/{entry.File}\"></script>");
+                        content.AppendHtml($"<script type=\"module\" src=\"/dist/{entry.File}\"></script>");
                     }
 
                     // Add CSS imports
@@ -48,7 +48,7 @@ public static class ViteHelper
                     {
                         foreach (string css in entry.Css)
                         {
-                            content.AppendHtml($"<link rel=\"stylesheet\" href=\"/{css}\">");
+                            content.AppendHtml($"<link rel=\"stylesheet\" href=\"/dist/{css}\">");
                         }
                     }
 
@@ -59,7 +59,7 @@ public static class ViteHelper
                         {
                             if (manifest.TryGetValue(import, out ViteManifestEntry? importEntry))
                             {
-                                content.AppendHtml($"<link rel=\"modulepreload\" href=\"/{importEntry.File}\">");
+                                content.AppendHtml($"<link rel=\"modulepreload\" href=\"/dist/{importEntry.File}\">");
                             }
                         }
                     }
@@ -84,7 +84,7 @@ public static class ViteHelper
                 return _manifest;
             }
 
-            string manifestPath = Path.Combine(env.WebRootPath, ".vite", "manifest.json");
+            string manifestPath = Path.Combine(env.WebRootPath, "dist", ".vite", "manifest.json");
                 
             if (!File.Exists(manifestPath))
             {

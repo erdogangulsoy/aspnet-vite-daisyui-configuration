@@ -4,7 +4,7 @@ import path from 'path';
 export default defineConfig({
     base: './',
     build: {
-        outDir: './wwwroot',
+        outDir: './wwwroot/dist',
         minify: 'esbuild',
         emptyOutDir: true,
         manifest: true,
