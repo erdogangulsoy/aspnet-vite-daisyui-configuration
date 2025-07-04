@@ -3,6 +3,9 @@ import path from 'path';
 
 export default defineConfig({
     base: './',
+    css: {
+        postcss: './postcss.config.js'
+    },
     build: {
         outDir: './wwwroot/dist',
         minify: 'esbuild',
