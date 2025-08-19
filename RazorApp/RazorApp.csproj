@@ -13,6 +13,8 @@
     <ItemGroup>
       <_ContentIncludedByDefault Remove="wwwroot\assets\main-CPanAHD_.js" />
       <_ContentIncludedByDefault Remove="wwwroot\assets\style-D0iQychu.css" />
+      <_ContentIncludedByDefault Remove="wwwroot\dist\assets\main-CPanAHD_.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\dist\assets\style-D0iQychu.css" />
     </ItemGroup>
 
 </Project>

@@ -6,7 +6,7 @@ namespace RazorApp.Helpers;
 
 public static class ViteHelper
 {
-    private static Dictionary<string, ViteManifestEntry>? _manifest;
+    private static volatile Dictionary<string, ViteManifestEntry>? _manifest; 
     private static readonly object _lock = new();
 
     public static IHtmlContent ViteAssets(this IHtmlHelper htmlHelper, IWebHostEnvironment env, params string[] entryPoints)
@@ -84,7 +84,7 @@ public static class ViteHelper
                 return _manifest;
             }
 
-            string manifestPath = Path.Combine(env.WebRootPath, "dist", ".vite", "manifest.json");
+            string manifestPath = Path.Combine(env.WebRootPath, "dist", "manifest.json");
                 
             if (!File.Exists(manifestPath))
             {
@@ -109,3 +109,4 @@ public class ViteManifestEntry
     public string[]? Imports { get; set; }
     public bool IsEntry { get; set; }
 }
+
